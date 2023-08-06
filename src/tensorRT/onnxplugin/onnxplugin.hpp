@@ -10,8 +10,8 @@
 #include <NvInferRuntimeCommon.h>
 #include <cuda_fp16.h>
 
-#include <common/cuda_tools.hpp>
-#include <infer/trt_infer.hpp>
+#include "../common/cuda_tools.hpp"
+#include "../infer/trt_infer.hpp"
 #include "plugin_binary_io.hpp"
 
 namespace ONNXPlugin {

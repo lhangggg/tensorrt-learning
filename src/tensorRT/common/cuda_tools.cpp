@@ -3,7 +3,6 @@
  *  系统关于CUDA的功能函数
  */
 
-
 #include "cuda_tools.hpp"
 
 namespace CUDATools{

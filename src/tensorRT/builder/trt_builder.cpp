@@ -6,14 +6,14 @@
 #include <NvInfer.h>
 #include <NvInferPlugin.h>
 //#include <NvCaffeParser.h>
-#include <onnx_parser/NvOnnxParser.h>
+#include "../onnx_parser/NvOnnxParser.h"
 #include <string>
 #include <vector>
 #include <iostream>
 #include <sstream>
 #include <assert.h>
 #include <stdarg.h>
-#include <common/cuda_tools.hpp>
+#include "../common/cuda_tools.hpp"
 
 using namespace nvinfer1;   
 using namespace std;   

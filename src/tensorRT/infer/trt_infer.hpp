@@ -7,7 +7,7 @@
 #include <memory>
 #include <vector>
 #include <map>
-#include <common/trt_tensor.hpp>
+#include "../common/trt_tensor.hpp"
 
 namespace TRT {
 

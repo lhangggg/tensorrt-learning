@@ -15,7 +15,6 @@
 #   define U_OS_LINUX
 #endif
 
-
 namespace iLogger{
 
     using namespace std;

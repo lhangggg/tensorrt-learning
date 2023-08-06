@@ -28,7 +28,7 @@ auto engine = Yolo::create_infer("yolox_m.fp32.trtmodel", Yolo::Type::X, 0);
 
 // 加载图像
 auto image = cv::imread("1.jpg");
-
+w
 // 推理并获取结果
 auto box = engine->commit(image).get();  // 得到的是vector<Box>
 ```

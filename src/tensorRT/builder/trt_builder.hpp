@@ -1,12 +1,10 @@
-
-
 #ifndef TRT_BUILDER_HPP
 #define TRT_BUILDER_HPP
 
 #include <string>
 #include <vector>
 #include <functional>
-#include <infer/trt_infer.hpp>
+#include "../infer/trt_infer.hpp"
 
 namespace TRT {
 

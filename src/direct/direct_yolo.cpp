@@ -1,6 +1,6 @@
 
-#include <builder/trt_builder.hpp>
-#include <infer/trt_infer.hpp>
+#include "../builder/trt_builder.hpp"
+#include "../infer/trt_infer.hpp"
 #include <common/preprocess_kernel.cuh>
 #include <common/ilogger.hpp>
 

@@ -1,6 +1,6 @@
 
 #include "plugin_binary_io.hpp"
-#include "ilogger.hpp"
+#include "../common/ilogger.hpp"
 #include <string.h>
 
 namespace Plugin{
