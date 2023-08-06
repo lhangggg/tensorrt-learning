@@ -235,8 +235,8 @@ void lesson_cache1frame(){
 int app_lesson(){
 
     iLogger::set_log_level(iLogger::LogLevel::Verbose);
-    test_tensor3();
-    // lesson1();
+    // test_tensor3();
+    lesson1();
     // lesson2();
     // lesson3();
     // lesson_cache1frame();

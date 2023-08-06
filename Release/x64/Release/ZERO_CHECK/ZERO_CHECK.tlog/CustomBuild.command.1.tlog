@@ -1,0 +1,10 @@
+^D:\PROJECT\LEARNING\TENSORRT-LEARNING\RELEASE\CMAKEFILES\26A007AA84BCD6A2513F80BC7CECB1C9\GENERATE.STAMP.RULE
+setlocal
+D:\software\cmake\bin\cmake.exe -SD:/project/learning/tensorrt-learning -BD:/project/learning/tensorrt-learning/Release --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file D:/project/learning/tensorrt-learning/Release/tensorrt_learning.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
