@@ -5,7 +5,7 @@ include(HelperFuncs)
 
 set(MODULES
     "tensorrt"
-    # "tutorial"
+    "detector"
 )
 
 foreach(VAR ${MODULES})

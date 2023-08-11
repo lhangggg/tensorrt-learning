@@ -100,11 +100,8 @@ VS_COMPILER_VER=16
 CONAN_EXTRA_ARGS=()
 CMAKE_EXTRA_ARGS=()
 
-echo "1"
-
 if [ $OS == "windows" -a "$ARCH" == "x86_64" ]; then
     CONAN_PROFILE="ConanProfileWin.txt"
-    echo "1.5"
     if [ $VS_VER == "2017" ]; then
         VS_GEN=(-G "Visual Studio 15 2017 Win64")
         VS_COMPILER_VER=15
@@ -119,7 +116,6 @@ elif [ $OS == "linux" -a "$ARCH" == "x86_64" ]; then
         # CMAKE_EXTRA_ARGS=(-DCMAKE_CXX_FLAGS="-D_GLIBCXX_USE_CXX11_ABI=0")
     fi
 fi
-echo "2"
 
 SCRIPT_DIR="$( cd "$(dirname "$0")" ; pwd -P)"
 BUILD_DIR=$SCRIPT_DIR/../Release

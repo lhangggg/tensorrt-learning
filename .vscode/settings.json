@@ -77,7 +77,8 @@
         "bit": "cpp",
         "__functional_base": "cpp",
         "locale": "cpp",
-        "__atomic": "cpp"
+        "__atomic": "cpp",
+        "xstring": "cpp"
     },
     "workbench.tree.expandMode": "doubleClick"
 }

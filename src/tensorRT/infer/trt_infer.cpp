@@ -7,7 +7,7 @@
 #include <NvCaffeParser.h>
 #include <NvInferPlugin.h>
 #include <cuda_fp16.h>
-#include "../common/cuda_tools.hpp"
+#include <common/cuda_tools.hpp>
 
 using namespace nvinfer1;
 using namespace std;

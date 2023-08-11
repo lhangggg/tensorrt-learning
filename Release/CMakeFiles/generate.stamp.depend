@@ -62,8 +62,6 @@ D:/software/cmake/share/cmake-3.23/Modules/CMakeSystemSpecificInitialize.cmake
 D:/software/cmake/share/cmake-3.23/Modules/Compiler/CMakeCommonCompilerMacros.cmake
 D:/software/cmake/share/cmake-3.23/Modules/Compiler/MSVC-CXX.cmake
 D:/software/cmake/share/cmake-3.23/Modules/Compiler/NVIDIA-CUDA.cmake
-D:/software/cmake/share/cmake-3.23/Modules/FindCUDA.cmake
-D:/software/cmake/share/cmake-3.23/Modules/FindCUDA/select_compute_arch.cmake
 D:/software/cmake/share/cmake-3.23/Modules/FindPackageHandleStandardArgs.cmake
 D:/software/cmake/share/cmake-3.23/Modules/FindPackageMessage.cmake
 D:/software/cmake/share/cmake-3.23/Modules/GNUInstallDirs.cmake

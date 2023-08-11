@@ -1,5 +1,3 @@
-
-
 #include <onnxplugin/onnxplugin.hpp>
 #include <common/cuda_tools.hpp>
 #include <cublas_v2.h>

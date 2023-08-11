@@ -2,5 +2,9 @@ D:/project/learning/tensorrt-learning/Release/CMakeFiles/INSTALL.dir
 D:/project/learning/tensorrt-learning/Release/CMakeFiles/ALL_BUILD.dir
 D:/project/learning/tensorrt-learning/Release/CMakeFiles/ZERO_CHECK.dir
 D:/project/learning/tensorrt-learning/Release/src/CMakeFiles/INSTALL.dir
-D:/project/learning/tensorrt-learning/Release/src/tensorrt/CMakeFiles/tensorrt.dir
+D:/project/learning/tensorrt-learning/Release/src/tensorrt/CMakeFiles/tensorrt_tool.dir
 D:/project/learning/tensorrt-learning/Release/src/tensorrt/CMakeFiles/INSTALL.dir
+D:/project/learning/tensorrt-learning/Release/src/detector/CMakeFiles/yolo_detector.dir
+D:/project/learning/tensorrt-learning/Release/src/detector/CMakeFiles/INSTALL.dir
+D:/project/learning/tensorrt-learning/Release/apps/CMakeFiles/test_yolo.dir
+D:/project/learning/tensorrt-learning/Release/apps/CMakeFiles/INSTALL.dir

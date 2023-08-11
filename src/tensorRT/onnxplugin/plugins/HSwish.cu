@@ -1,4 +1,3 @@
-
 #include <onnxplugin/onnxplugin.hpp>
 #include <cuda_fp16.hpp>
 

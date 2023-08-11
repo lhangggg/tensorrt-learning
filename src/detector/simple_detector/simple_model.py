@@ -23,11 +23,13 @@ if __name__ == '__main__':
     y = model(x)
     print(y)
 
-    export_path = "./data/tutorial/lesson/simple_model.onnx"
+    export_path = "./data/simple_model/lesson1.onnx"
     torch.onnx.export(
         model, (x, ), export_path, verbose=True
     )
 
+
+# python ./src/application/simple_model/simple_model.py
 
 
 

@@ -1,4 +1,4 @@
-set(target_name tensorrt)
+set(target_name tensorrt_tool)
 add_library(${target_name})
 
 # lib
@@ -10,6 +10,8 @@ endif()
 file(GLOB_RECURSE SRC_FILES
     ${PROJECT_SOURCE_DIR}/src/tensorrt/*.hpp
     ${PROJECT_SOURCE_DIR}/src/tensorrt/*.cpp
+    ${PROJECT_SOURCE_DIR}/src/tensorrt/*.cuh
+    ${PROJECT_SOURCE_DIR}/src/tensorrt/*.cu
 )
 
 target_sources(${target_name}
@@ -23,21 +25,23 @@ target_include_directories(${target_name}
         $<INSTALL_INTERFACE:include>
     PRIVATE
         ${opencv_INCLUDE_DIRS}
-        ${PROJECT_SOURCE_DIR}/src/tensorrt
-        ${CMAKE_CURRENT_BINARY_DIR}        # ?
-        ${PROTO_SRC_DIRS}
         ${TENSORRT_DIR}/include
+        ${PROJECT_SOURCE_DIR}/src/tensorrt
+        ${PROTO_SRC_DIRS}
 )
+
+set(TENSORRT_LIB_PATH "${TENSORRT_DIR}/lib")
+file(GLOB TENSORRT_LIBS ${TENSORRT_LIB_PATH}/*.lib)
 
 target_link_libraries(${target_name}
     PRIVATE
         ${opencv_LIBS}
         protobuf::libprotobuf
-)
-
-target_link_directories(${target_name}
-    PRIVATE
-        ${TENSORRT_DIR}/lib
+        ${TENSORRT_LIBS}
+        cuda
+        cublas
+        cudart
+        cudnn
 )
 
 set_target_properties(${target_name}
@@ -48,7 +52,7 @@ set_target_properties(${target_name}
 if(MSVC)
     target_compile_options(${target_name}
         PRIVATE
-            $<$<COMPILE_LANGUAGE:CXX>: /W3 /wd4275 /wd4251 /wd4068 /wd4819 /wd4309 /wd4819>
+            $<$<COMPILE_LANGUAGE:CXX>: /W2 /wd4275 /wd4251 /wd4068 /wd4819 /wd4309 /wd4819>
     )
 else()
     target_compile_options(${target_name}
@@ -75,10 +79,10 @@ install(TARGETS ${target_name}
     ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
 )
 
-file(GLOB sdk_include_files
-    ${PROJECT_SOURCE_DIR}/include/cuda_demo/cuda_demo.hpp
-)
-install(FILES ${sdk_include_files} DESTINATION include)
+# file(GLOB sdk_include_files
+#     ${PROJECT_SOURCE_DIR}/include/cuda_demo/cuda_demo.hpp
+# )
+# install(FILES ${sdk_include_files} DESTINATION include)
 
 if(MSVC AND GENORATE_VS_DEBUG_INFORM)
     set_target_properties(${target_name} PROPERTIES LINK_FLAGS "/DEBUG")

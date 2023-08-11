@@ -16,22 +16,21 @@ function(add_app)
 
     target_include_directories(${PARSED_ARGS_APP_NAME}
         PRIVATE
-        ${OpenCV_INCLUDE_DIRS}
+        ${opencv_INCLUDE_DIRS}
     )
 
     if(UNIX)
         target_link_libraries(${PARSED_ARGS_APP_NAME}
             PRIVATE
             ${PARSED_ARGS_APP_DEPS} "stdc++fs"
-            ${OpenCV_LIBS}
+            ${opencv_LIBS}
         )
     else()
         target_link_libraries(${PARSED_ARGS_APP_NAME}
             PRIVATE
             ${PARSED_ARGS_APP_DEPS}
-            ${OpenCV_LIBS}
+            ${opencv_LIBS}
         )
-
         if(GENORATE_VS_DEBUG_INFORM)
             set_target_properties(${PARSED_ARGS_APP_NAME} PROPERTIES VS_DEBUGGER_WORKING_DIRECTORY ${PROJECT_SOURCE_DIR})
             set_target_properties(${PARSED_ARGS_APP_NAME} PROPERTIES LINK_FLAGS "/DEBUG")
@@ -58,10 +57,10 @@ function(add_app_cuda)
         PARSED_ARGS # prefix of output variables
         "" # list of names of the boolean arguments (only defined ones will be true)
         "APP_NAME" # list of names of mono-valued arguments
-        "APP_SRCS; APP_DEPS" # list of names of multi-valued arguments (output variables are lists)
+        "APP_SRCS;APP_DEPS" # list of names of multi-valued arguments (output variables are lists)
         ${ARGN} # arguments of the function to parse, here we take the all original ones
     )
-    add_executable(${PARSED_ARGS_APP_NAME})
+    add_library(${PARSED_ARGS_APP_NAME})
 
     target_sources(${PARSED_ARGS_APP_NAME}
         PRIVATE
@@ -69,15 +68,20 @@ function(add_app_cuda)
     )
 
     target_include_directories(${PARSED_ARGS_APP_NAME}
+        PUBLIC
+            $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include>
+            $<INSTALL_INTERFACE:include>
         PRIVATE
-            ${OpenCV_INCLUDE_DIRS}
+            ${opencv_INCLUDE_DIRS}
+            ${PROJECT_SOURCE_DIR}/src/tensorrt
+            ${PROJECT_SOURCE_DIR}/src
     )
 
     if(UNIX)
         target_link_libraries(${PARSED_ARGS_APP_NAME}
             PRIVATE
                 ${PARSED_ARGS_APP_DEPS} "stdc++fs"
-                ${OpenCV_LIBS}
+                ${opencv_LIBS}
         )
     else()
         target_link_libraries(${PARSED_ARGS_APP_NAME}
@@ -119,6 +123,6 @@ function(add_app_cuda)
 
     # install(
     #     TARGETS ${PARSED_ARGS_APP_NAME}
-    #     RUNTIME DESTINATION ${CMAKE_INSTALL_PREFIX}/bin/apps_cuda
+    #     RUNTIME DESTINATION ${CMAKE_INSTALL_PREFIX}/bin
     # )
 endfunction(add_app_cuda)
